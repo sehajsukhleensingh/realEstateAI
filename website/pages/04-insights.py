@@ -45,7 +45,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-dt = pd.read_csv('datasets/Coef-Weights.csv')
+dt = pd.read_csv('website/datasets/Coef-Weights.csv')
 
 st.header('Check how much the price increases approximately on average on increase in any of this feature ')
 

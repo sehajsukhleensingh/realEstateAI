@@ -51,7 +51,7 @@ st.markdown(
     unsafe_allow_html=True
 )
   
-dt = pd.read_csv('datasets/flat-recomendations.csv')
+dt = pd.read_csv('website/datasets/flat-recomendations.csv')
 
 
 from sklearn.feature_extraction.text import TfidfVectorizer
