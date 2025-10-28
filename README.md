@@ -1,4 +1,5 @@
 # 🏠 realEstateAI
+**project link:** https://realestateai-capstoneproject.streamlit.app/
 
 An end-to-end **machine learning application** that predicts property prices, analyzes market trends, provides insights, and recommends properties based on user preferences.  
 
@@ -54,7 +55,7 @@ This project demonstrates the complete data science workflow — from **manual d
    - Integrated all modules using **Streamlit**, creating a unified interactive experience for users.
 
 7. **Deployment**  
-   - Deployed on **AWS Cloud** for high availability, scalability, and seamless accessibility.
+   - Deployed on **streamlit cloud** for availability and seamless accessibility.
 
 ---
 
@@ -63,8 +64,9 @@ This project demonstrates the complete data science workflow — from **manual d
 - Pandas, NumPy, Scikit-learn, XGBoost
 - Matplotlib, Seaborn, Plotly
 - Streamlit
-- AWS (Deployment)
-
+- requests
+- beautifulSoup
+- selenium
 ---
 
 ##  Results
