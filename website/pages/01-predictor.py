@@ -2,6 +2,20 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np 
+import os
+import pickle
+
+# Always resolves path correctly no matter where Streamlit runs
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "dt.pkl")  # file in the same folder as predictor
+
+with open(MODEL_PATH, "rb") as file:
+    dt = pickle.load(file)
+
+PIPELINE_PATH = os.path.join(BASE_DIR, "pipeline.pkl")
+
+with open(PIPELINE_PATH, "rb") as file:
+    pipeline = pickle.load(file)
 
 st.set_page_config(
     page_title = 'predictor'
@@ -60,14 +74,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-# loading the dataset 
-
-with open('dt.pkl' , 'rb') as file:
-    dt = pickle.load(file)
-
-with open('pipeline.pkl','rb') as file:
-    pipe = pickle.load(file)
 
 st.header("Enter Data ")
 
@@ -130,7 +136,7 @@ if st.button("Predict Price"):
     df = pd.DataFrame([data],columns = dt.columns)
    
     # prediction 
-    base = round(np.expm1(pipe.predict(df))[0],2)
+    base = round(np.expm1(pipeline.predict(df))[0],2)
     low = round(base - 0.33,2) 
     high = round(base + 0.33,2)
 
