@@ -49,12 +49,12 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-dt = pd.read_csv('datasets/dataset-v6.csv')
+dt = pd.read_csv('website/datasets/dataset-v6.csv')
 dt.drop(columns = 'Unnamed: 0' , inplace = True)
 
 dt['pricePerSqft'] = round((dt['Y']*10000000)/dt['builtup'],2)
 
-latLong = pd.read_csv('datasets/latlong.csv')
+latLong = pd.read_csv('website/datasets/latlong.csv')
 
 latLong['sector'] = latLong['sector'].astype('int')
 
