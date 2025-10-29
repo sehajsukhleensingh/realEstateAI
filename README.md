@@ -17,6 +17,9 @@ This project demonstrates the complete data science workflow — from **manual d
 ## Analytics Module
 - Visualizes property price trends across different sectors and areas.
 - Analyzes how prices vary with different property features.
+  ![Alt Image](https://github.com/sehajsukhleensingh/realEstateAI/blob/f6772a47af4a5f9f80aedd0c31872973f23ffe53/images/Screenshot%202025-10-29%20at%2012.37.25%E2%80%AFPM.png)
+  ![Alt Image](https://github.com/sehajsukhleensingh/realEstateAI/blob/f6772a47af4a5f9f80aedd0c31872973f23ffe53/images/Screenshot%202025-10-29%20at%2012.37.41%E2%80%AFPM.png)
+  ![Alt Image](https://github.com/sehajsukhleensingh/realEstateAI/blob/f6772a47af4a5f9f80aedd0c31872973f23ffe53/images/Screenshot%202025-10-29%20at%2012.37.51%E2%80%AFPM.png)
 - Helps users understand broader **market dynamics**.
 
 ---
