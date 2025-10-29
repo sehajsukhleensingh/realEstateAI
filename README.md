@@ -1,4 +1,4 @@
-# 🏠 realEstateAI
+# realEstateAI
 **project link:** https://realestateai-capstoneproject.streamlit.app/
 
 An end-to-end **machine learning application** that predicts property prices, analyzes market trends, provides insights, and recommends properties based on user preferences.  
