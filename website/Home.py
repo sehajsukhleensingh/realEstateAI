@@ -52,7 +52,6 @@ st.markdown(
             color: #D6D6D6;
             font-size: 1.1rem;
             line-height: 1.6;
-            text-align: center;
         }
 
         /* How-to box styling */
@@ -92,7 +91,7 @@ recommendations to simplify real estate decision-making.
 
 # Divider
 st.markdown("---")
-st.markdown("How to Use")
+st.markdown("*How to Use*")
 
 st.markdown("""
 <div class="how-to">
