@@ -84,7 +84,7 @@ st.markdown(
 )
 
 st.title("Real Estate Intelligence System")
-st.markdown("### *Predict • Analyze • Recommend • Understand property trends*")
+st.markdown("*Predict • Analyze • Recommend • Understand property trends*")
 
 st.markdown("""
 This platform helps users explore housing prices, analyze market trends, 
@@ -95,7 +95,7 @@ recommendations to simplify real estate decision-making.
 
 # Divider
 st.markdown("---")
-st.markdown("## 💡 How to Use")
+st.markdown("How to Use")
 
 st.markdown("""
 <div class="how-to">
