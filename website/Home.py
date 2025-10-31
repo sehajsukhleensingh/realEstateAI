@@ -39,13 +39,10 @@ st.markdown(
     [data-testid="stTable"] th{
     font-family: courier !important;
     }
-    /* Center content */
-        .main {
-            padding: 3rem 2rem;
-        }
+    
 
-        /* Headings */
-        h1, h2, h3 {
+
+    h1, h2, h3 {
             color: #9AA2FF;  /* soft indigo tone */
             text-align: center;
         }
