@@ -9,6 +9,6 @@ scikit_learn==1.7.2
 seaborn==0.13.2
 selenium==4.38.0
 streamlit==1.50.0
-xgboost
-category_encoders
+xgboost==3.1.2
+category_encoders==2.9.0
 watchdog
