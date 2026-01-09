@@ -7,6 +7,17 @@ This project demonstrates the complete data science workflow — from **manual d
 
 ---
 
+## 🐳 Docker Image
+
+Pull and run the project using Docker:
+
+```bash
+docker pull sehajsukhleensingh/realestateai:v1
+docker run -p 8501:8501 sehajsukhleensingh/realestateai:v1 
+```
+
+---
+
 ## Price Prediction Module
 - Predicts property prices using **XGBoost Regression**.
 - Considers key features like area, sector, number of bedrooms, bathrooms, and property type.
@@ -17,9 +28,11 @@ This project demonstrates the complete data science workflow — from **manual d
 ## Analytics Module
 - Visualizes property price trends across different sectors and areas.
 - Analyzes how prices vary with different property features.
-  ![Alt Image](https://github.com/sehajsukhleensingh/realEstateAI/blob/f6772a47af4a5f9f80aedd0c31872973f23ffe53/images/Screenshot%202025-10-29%20at%2012.37.25%E2%80%AFPM.png)
-  ![Alt Image](https://github.com/sehajsukhleensingh/realEstateAI/blob/f6772a47af4a5f9f80aedd0c31872973f23ffe53/images/Screenshot%202025-10-29%20at%2012.37.41%E2%80%AFPM.png)
-  ![Alt Image](https://github.com/sehajsukhleensingh/realEstateAI/blob/f6772a47af4a5f9f80aedd0c31872973f23ffe53/images/Screenshot%202025-10-29%20at%2012.37.51%E2%80%AFPM.png)
+ <p align="center">
+  <img src="https://github.com/sehajsukhleensingh/realEstateAI/blob/f6772a47af4a5f9f80aedd0c31872973f23ffe53/images/Screenshot%202025-10-29%20at%2012.37.25%E2%80%AFPM.png" width="370">
+  <img src="https://github.com/sehajsukhleensingh/realEstateAI/blob/f6772a47af4a5f9f80aedd0c31872973f23ffe53/images/Screenshot%202025-10-29%20at%2012.37.41%E2%80%AFPM.png" width="370">
+  <img src="https://github.com/sehajsukhleensingh/realEstateAI/blob/f6772a47af4a5f9f80aedd0c31872973f23ffe53/images/Screenshot%202025-10-29%20at%2012.37.51%E2%80%AFPM.png" width="370">
+</p>
 - Helps users understand broader **market dynamics**.
 
 ---
