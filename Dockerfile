@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8501 
 
 # final command to run app 
-CMD ["streamlit","run","main.py"]
+CMD ["streamlit","run","website/main.py"]
