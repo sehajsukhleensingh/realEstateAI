@@ -1,7 +1,5 @@
-# virtual env 
 VENV
-
 .vscode
-
-# unwanted mac file 
 .DS_Store
+__pycache__/
+*.pkl
