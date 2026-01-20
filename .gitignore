@@ -1,5 +1,11 @@
+# virtual enviornment 
 VENV
+
 .vscode
+#unwanted mac file
 .DS_Store
+#unwanted cache file
 __pycache__/
+
+#trained artifacts models , pipelines , data
 *.pkl
