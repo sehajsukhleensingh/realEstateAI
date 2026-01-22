@@ -48,6 +48,24 @@ docker run -p 8501:8501 sehajsukhleensingh/realestateai:v1
 - Uses similarity-based logic to recommend **top listings** with best-value pricing.
 
 ---
+## 🔌 API-First Machine Learning Design
+
+The core ML logic is exposed via **dedicated API endpoints using FastAPI**, making the system usable beyond the UI.
+
+### API Capabilities
+- Accepts structured JSON input for properties
+- Performs preprocessing and feature transformation
+- Returns:
+  - Predicted property price
+  - Recommendation results (where applicable)
+- Decoupled from UI for:
+  - Web integration
+  - Mobile apps
+  - Future microservices
+
+This mirrors **real-world ML deployment patterns**, where models are consumed via APIs, not notebooks.
+
+---
 
 ##  Workflow Overview
 
