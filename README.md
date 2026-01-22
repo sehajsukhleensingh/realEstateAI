@@ -12,8 +12,8 @@ This project demonstrates the complete data science workflow — from **manual d
 Pull and run the project using Docker:
 
 ```bash
-docker pull sehajsukhleensingh/realestateai:v1
-docker run -p 8501:8501 sehajsukhleensingh/realestateai:v1 
+docker pull sehajsukhleensingh/realestateai:v2
+docker run -p 8501:8501 sehajsukhleensingh/realestateai:v2 
 ```
 
 ---

@@ -3,4 +3,9 @@ VENV
 .DS_Store
 insightsTesting.ipynb
 recomenderSystemTesting.ipynb
-images
+readme_images
+api 
+src/models
+src/processing_data
+src/proxies
+src/scraping
