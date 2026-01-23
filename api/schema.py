@@ -117,3 +117,13 @@ class ModelInput(BaseModel):
     heightCat:float	
 	
     model_config = {"populate_by_name":True}
+
+
+class RecommenderInput(BaseModel):
+
+    id:Annotated[
+        int,
+        Field(...,gt=-1,description="Enter the id number of flat to whom " \
+    "similar properties you want to view" , examples=[134,151]) 
+    ]
+
