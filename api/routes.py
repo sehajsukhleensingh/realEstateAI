@@ -73,4 +73,99 @@ def recommender(index: RecommenderInput):
     
     except Exception as e:
         return JSONResponse(status_code=500,content=str(e))
+    
+@router.get("/analytics/sectorwise-price")
+def sectorwise_price():
+    try:
+        dt = pd.read_csv('src/data/final/dataset-v6.csv')
+        dt.drop(columns = 'Unnamed: 0' , inplace = True)
+        latLong = pd.read_csv('src/data/final/latlong.csv')
+    except:
+        return JSONResponse(status_code=404,content={"message":"failed to fetch the dataset"})
+    
+    dt['pricePerSqft'] = round((dt['Y']*10000000)/dt['builtup'],2)
+    latLong['sector'] = latLong['sector'].astype('int')
 
+    temp = dt.merge(latLong,on='sector')
+    
+    temp['latitude'] = temp['coordinates'].str.replace('N','').str.replace('E','').str.replace('°','').str.split(',').str[0]
+    temp['longitude'] = temp['coordinates'].str.replace('N','').str.replace('E','').str.replace('°','').str.split(',').str[1]
+
+    temp.drop(columns = 'coordinates' , inplace = True)
+
+    temp['latitude'] = temp['latitude'].astype('float')
+    temp['longitude'] = temp['longitude'].astype('float')
+
+    groupDt = temp.groupby('sector').mean()[['pricePerSqft','builtup','latitude','longitude']].reset_index()
+
+    return groupDt.to_dict(orient="records")
+
+@router.get("/analytics/area-v-price")
+def area_price(flag : str):
+
+    try:
+        dt = pd.read_csv("src/data/final/dataset-v6.csv")
+        dt.drop(columns='Unnamed: 0' , inplace = True)
+    except:
+        return JSONResponse(status_code=404,content={"message":"failed to fetch the dataset"})
+
+    if flag == "flat":
+        df = dt[dt['propertyType'] == 0.0]
+        df = df[["builtup","Y"]].rename(columns={"builtup":"builtup area (in sq feet)","Y":"price (in crores)"})
+    
+    else:
+        df = dt[dt['propertyType'] == 1.0]
+        df = df[["builtup","Y"]].rename(columns={"builtup":"builtup area (in sq feet)","Y":"price (in crores)"})
+
+    return df.to_dict(orient="records")
+
+
+@router.get("/analytics/average-bedrooms")
+def average_bedrooms(flag :str = "overall"):
+    try:
+        dt = pd.read_csv("src/data/final/dataset-v6.csv")
+        dt.drop(columns="Unnamed: 0", inplace = True)
+    except:
+        return JSONResponse(status_code=404,content={"message":"failed to fetch the dataset"})
+    
+    if flag == "flat":
+        df = dt[dt["propertyType"] == 0.0]
+       
+    elif flag == "independent house":
+        df = dt[dt["propertyType"] == 1.0]
+       
+    else:
+        df = dt[["propertyType","bedRooms"]]
+       
+    avg_bedrooms = df["bedRooms"].value_counts().sort_index().to_dict()
+
+    return avg_bedrooms
+
+
+@router.get("/analytics/average-price-bhk")
+def average_price_bhk():
+    try:
+        dt = pd.read_csv("src/data/final/dataset-v6.csv")
+        dt.drop(columns="Unnamed: 0", inplace = True)
+
+    except:
+        return JSONResponse(status_code=404,content={"message":"failed to fetch the dataset"})
+    
+    df = dt[["Y","bedRooms"]]
+    df = df[df["bedRooms"] <= 6]
+
+    return df.to_dict()
+
+@router.get("/analytics/prices-range")
+def price_ranges_wrt_property():
+    try:
+        dt = pd.read_csv("src/data/final/dataset-v6.csv")
+        dt.drop(columns="Unnamed: 0" , inplace=True)
+
+    except:
+        return JSONResponse(status_code=404,content={"message":"failed to fetch the dataset"})
+    
+    flats = dt[dt['propertyType']==0.0]['Y'].to_list()
+    houses = dt[dt['propertyType']==1.0]['Y'].to_list()
+    
+    return {"flats":flats,"houses":houses}
