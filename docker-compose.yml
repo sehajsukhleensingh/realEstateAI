@@ -1,0 +1,16 @@
+services:
+  backend:
+    image: sehajsukhleensingh/realestateai-api:v1
+    container_name: realestateai-backend
+    ports:
+      - "8000:8000"
+    
+  frontend:
+    image: sehajsukhleensingh/realestateai:v3
+    container_name: realestateai-frontend
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    environment:
+      API_BASE_URL: http://backend:8000

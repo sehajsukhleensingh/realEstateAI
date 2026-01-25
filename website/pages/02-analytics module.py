@@ -50,14 +50,16 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+import os 
+API_BASE_URL = os.getenv("API_BASE_URL","http://127.0.0.1:8000")
 
-url = "http://127.0.0.1:8000/analytics/sectorwise-price"
+url = f"{API_BASE_URL}/analytics/sectorwise-price"
 response = requests.get(url)
 data = response.json()
 data = pd.DataFrame(data)
 
 st.header('Sectorwise Price per Sqft')
-fig = px.scatter_mapbox( data , lat="latitude", lon="longitude",hover_name='sector',color="pricePerSqft", size="builtup",
+fig = px.scatter_map( data , lat="latitude", lon="longitude",hover_name='sector',color="pricePerSqft", size="builtup",
                   color_continuous_scale=px.colors.cyclical.IceFire,  size_max=15, zoom=10 , mapbox_style="open-street-map")
 
 st.plotly_chart(fig)
@@ -65,7 +67,7 @@ st.plotly_chart(fig)
 
 st.header('Area v/s Price')
 key = st.selectbox('Property Type' , ['flat' , 'independent house'])
-url = "http://127.0.0.1:8000/analytics/area-v-price"
+url = f"{API_BASE_URL}/analytics/area-v-price"
 response = requests.get(url,params={"flag":key})
 data = pd.DataFrame(response.json())
 
@@ -81,7 +83,7 @@ st.plotly_chart(fig)
 
 st.header('Average number of Bedrooms')
 key = st.selectbox('Property Type' , ['flat' , 'independent house' , 'overall'])
-url = "http://127.0.0.1:8000/analytics/average-bedrooms"
+url = f"{API_BASE_URL}/analytics/average-bedrooms"
 response = requests.get(url,params={"flag":key})
 data = response.json()
 data = pd.DataFrame({"BHK":data.keys(),"bedRooms":data.values()})
@@ -92,7 +94,7 @@ st.plotly_chart(fig)
 
 
 st.header('Average Price (BHK)')
-url = "http://127.0.0.1:8000/analytics/average-price-bhk"
+url = f"{API_BASE_URL}/analytics/average-price-bhk"
 response = requests.get(url)
 data = response.json()
 data = pd.DataFrame(data)
@@ -104,7 +106,7 @@ st.plotly_chart(px.box(data , x = 'bedRooms' , y = 'Y' , labels = {
 
 
 st.header('Distribution plot (Flats v/s Independent House)')
-url = "http://127.0.0.1:8000/analytics/prices-range"
+url = f"{API_BASE_URL}/analytics/prices-range"
 response = requests.get(url)
 data = response.json()
 
