@@ -14,7 +14,7 @@ This project uses a **two-service architecture**:
 
 You only need the Docker images and the compose file — no source code setup required.
 
-#  Step 1 — Download the Docker Compose File
+###  Step 1 — Download the Docker Compose File
 
 Download the `docker-compose.yml` file and place it in an empty folder.
 
@@ -22,14 +22,14 @@ Download the `docker-compose.yml` file and place it in an empty folder.
 curl -O https://raw.githubusercontent.com/sehajsukhleensingh/realEstateAI/main/docker-compose.yml
 ```
 
-#  Step 2 — Pull the docker images 
+###  Step 2 — Pull the docker images 
 
 ```bash
 docker pull sehajsukhleensingh/realestateai:v3
 docker pull sehajsukhleensingh/realestateai-api:v1
 ```
 
-#  Step 3 - Run the command 
+###  Step 3 - Run the command 
 
 ```bash
 docker compose up 
