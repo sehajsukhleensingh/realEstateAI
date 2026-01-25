@@ -33,7 +33,8 @@ docker run -p 8501:8501 sehajsukhleensingh/realestateai:v2
   <img src="https://github.com/sehajsukhleensingh/realEstateAI/blob/f6772a47af4a5f9f80aedd0c31872973f23ffe53/images/Screenshot%202025-10-29%20at%2012.37.41%E2%80%AFPM.png" width="370">
   <img src="https://github.com/sehajsukhleensingh/realEstateAI/blob/f6772a47af4a5f9f80aedd0c31872973f23ffe53/images/Screenshot%202025-10-29%20at%2012.37.51%E2%80%AFPM.png" width="370">
 </p>
-- Helps users understand broader **market dynamics**.
+
+- Helps users understand broader **market dynamics**
 
 ---
 
