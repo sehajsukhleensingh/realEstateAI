@@ -1,19 +1,38 @@
 # realEstateAI
-**project link:** https://realestateai-capstoneproject.streamlit.app/
-
 An end-to-end **machine learning application** that predicts property prices, analyzes market trends, provides insights, and recommends properties based on user preferences.  
 
 This project demonstrates the complete data science workflow — from **manual data collection to model training, analytics, and visualization** — showcasing strong hands-on skills in **core machine learning and data analytics**.
 
 ---
 
-## 🐳 Docker Image
+## 🐳 Run the Full System with Docker
 
-Pull and run the project using Docker:
+This project uses a **two-service architecture**:
+
+- **Frontend** → Streamlit dashboard (UI)  
+- **Backend** → FastAPI server (ML models + analytics APIs)
+
+You only need the Docker images and the compose file — no source code setup required.
+
+#  Step 1 — Download the Docker Compose File
+
+Download the `docker-compose.yml` file and place it in an empty folder.
 
 ```bash
-docker pull sehajsukhleensingh/realestateai:v2
-docker run -p 8501:8501 sehajsukhleensingh/realestateai:v2
+curl -O https://raw.githubusercontent.com/sehajsukhleensingh/realEstateAI/main/docker-compose.yml
+```
+
+#  Step 2 — Pull the docker images 
+
+```bash
+docker pull sehajsukhleensingh/realestateai:v3
+docker pull sehajsukhleensingh/realestateai-api:v1
+```
+
+#  Step 3 - Run the command 
+
+```bash
+docker compose up 
 ```
 
 ---
